@@ -2,7 +2,7 @@ package fit.iuh.week1;
 
 public class NoDesignPattern {
     // Class Employee cơ bản
-    class Employee {
+    static class Employee {
         String name;
 
         public Employee(String name) {
@@ -21,7 +21,7 @@ public class NoDesignPattern {
     }
 
     // Class Leader kế thừa từ Employee
-    class Leader extends Employee {
+    static class Leader extends Employee {
         public Leader(String name) {
             super(name);
         }
@@ -40,7 +40,7 @@ public class NoDesignPattern {
     }
 
     // Class Chief kế thừa từ Leader
-    class Chief extends Leader {
+    static class Chief extends Leader {
         public Chief(String name) {
             super(name);
         }
@@ -60,12 +60,10 @@ public class NoDesignPattern {
     }
 
     public static void main(String[] args) {
-        NoDesignPattern app = new NoDesignPattern();
-
         // Tạo các đối tượng với vai trò khác nhau
-        Employee emp = app.new Employee("John");
-        Leader leader = app.new Leader("Mary");
-        Chief chief = app.new Chief("Peter");
+        Employee emp = new Employee("John");
+        Leader leader = new Leader("Mary");
+        Chief chief = new Chief("Peter");
 
         // In danh sách khả năng của từng người
         emp.displayAbilities();
